@@ -3,12 +3,13 @@
 	padding: 0;
 }
 
-#nav {
-
-	
+body{
+	font-family: "Work Sans"
 }
 
-
+section{
+	padding-top: 100px;
+}
 ul{	
 	position: fixed;
 	top: 0;
@@ -17,7 +18,7 @@ ul{
 	padding: 0;
 	margin: 0;
 	padding-top: 20px;
-	background-color: #e0ebe8;
+	background-color: #CDEDFD;
 	padding-bottom: 40px;
 
 	
@@ -34,20 +35,33 @@ li a {
 	color: black;
 }
 
+li a:hover{
+	color: #10a9f5
+;
 
+}
 #welcome {
-
+	padding-top:0;
 	height:100vh;
-	background-color: #e0ebe8;
+	background-color: #CDEDFD;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 }
-
-section{
-	padding-top: 100px;
+#welcome h1 {
+	font-weight: bold;
+	font-size: 32px;
 }
+#welcome p{
+
+	font-size: 18px;
+	color: #10a9f5
+}
+#projects{
+	background-color:#F8F8F8;
+}
+
 #project-div {
 	padding-top: 60px;
 	width: 800px;
@@ -77,9 +91,12 @@ section{
 	margin-bottom: 45px;
 
 	border: 2px black solid;
-	border-radius: 25px;
+	border-radius: 5px;
 	
 
+}
+#contact {
+	background-color: #B6DCFE;
 }
 #contact-box {
 	
@@ -103,9 +120,12 @@ section{
 	height: 100px;
 	border: 2px black solid;
 	border-radius: 25px;
-
-
-
+}
+footer{
+	line-height: 20px;
+	text-align: center;
+	padding: 20px;
+	background-color:#F8F8F8;
 }
 
 
