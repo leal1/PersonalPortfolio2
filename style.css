@@ -49,18 +49,18 @@ li a:hover{
 	font-style: italic;
 	font-size: 16px;
 	top: 160px;
-	left: 100px;
+	left: 140px;
 }
 #welcome-intro #skills {
 	position: relative;
 	font-size:24px;
 	top: 180px;
-	left: 100px;
+	left: 140px;
 }
 #webdev {
 	position: relative;
 	top: 150px;
-	left: 100px;
+	left: 140px;
 	border-bottom: 4px #10a9f5 solid;
 	width: 660px;
 }
@@ -68,14 +68,17 @@ li a:hover{
 	font-size: 64px;
 	font-weight: bolder;
 	color: #10a9f5;
-
-
 }
 
 #welcome-intro p {
 	position: relative;
 	top: 10px;
 	font-size: 18px;
+}
+@media only screen and (max-width: 500px) {
+	#webdev, #welcome-intro #skills, #welcome-intro #intro{
+		left: 80px;
+	}
 }
 #about {
 	padding:100px 50px;
