@@ -78,7 +78,11 @@ li a:hover{
 	top: 10px;
 	font-size: 18px;
 }
-
+@media only screen and (max-width: 500px) {
+	#webdev, #welcome-intro #skills, #welcome-intro #intro{
+		left: 100px;
+	}
+}
 #about {
 	padding:100px 50px;
 }
