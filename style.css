@@ -49,18 +49,18 @@ li a:hover{
 	font-style: italic;
 	font-size: 16px;
 	top: 160px;
-	left: 140px;
+	left: 100px;
 }
 #welcome-intro #skills {
 	position: relative;
 	font-size:24px;
 	top: 180px;
-	left: 140px;
+	left: 100px;
 }
 #webdev {
 	position: relative;
 	top: 150px;
-	left: 140px;
+	left: 100px;
 	border-bottom: 4px #10a9f5 solid;
 	width: 660px;
 }
