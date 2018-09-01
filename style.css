@@ -80,7 +80,7 @@ li a:hover{
 }
 @media only screen and (max-width: 500px) {
 	#webdev, #welcome-intro #skills, #welcome-intro #intro{
-		left: 100px;
+		left: 50px;
 	}
 }
 #about {
