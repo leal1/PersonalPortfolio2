@@ -21,6 +21,7 @@ ul{
 	padding: 20px 0px 40px 0px;
 	margin: 0;
 	background-color: #CDEDFD;
+	z-index: 300;
 
 }
 li {
@@ -143,6 +144,7 @@ li a:hover{
 
 	border: 2px black solid;
 	border-radius: 5px;
+
 	
 
 }
