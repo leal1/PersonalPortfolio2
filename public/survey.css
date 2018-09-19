@@ -1,0 +1,84 @@
+body {
+	background-color: #92B4F4;
+	text-align: center;
+	font-family: Helvetica;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 40px;
+}
+
+footer{
+	line-height: 20px;
+	text-align: center;
+	padding: 30px;
+}
+
+#form-cont{
+	width: 60%;
+	margin: 0 auto;
+	
+	background-color: #ffffff;
+	padding: 20px 10px;
+}
+
+
+#radio-intern{
+	margin-top: 15px;
+}
+
+#radio-intern input[type="radio"] {
+	margin-left: 10px;
+}
+
+#checkbox{
+	margin-top: 16px;
+}
+
+#dropdown{
+	margin-top: 16px;
+}
+
+#checkbox, input[type="checkbox"] {
+	margin-left: 6px;
+	margin-top: 10px;
+}
+
+#txt{
+	height: 50px;
+}
+
+#suggestions {
+	margin-top: 20px;
+}
+
+#submit {
+	background-color: black;
+	color: white;
+}
+
+.labels {
+	display: inline-block;
+	text-align: right;
+	width: 40%;
+	padding: 4px;
+	vertical-align: top;
+	margin-top: 10px;
+}
+
+.inputInd  {
+	display: inline-block;
+	text-align: left;
+	width: 55%;
+	vertical-align: top;
+}
+
+.inputs {
+	  height: 18px;
+	  width: 60%;
+	  padding: 4px;
+	  margin: 10px;
+	  border: 1.5px solid #92B4F4;	  
+}
+
