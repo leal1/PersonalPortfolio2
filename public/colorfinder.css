@@ -1,0 +1,64 @@
+body{
+	background-color: #232323;
+	font-family: "Montserrat", "Avenir";
+	margin: 0;
+}
+h1{
+	color: white;
+	text-align: center;
+	background-color: steelblue;
+	margin: 0;
+	padding: 20px;
+	text-transform: uppercase;
+
+}
+
+button {
+	height: 100%;
+	outline: none;
+	border: none;
+	text-transform: uppercase;
+	transition: all, .3;
+	-webkit-transition: all, .3s;
+	-moz-transition: all, .3s;
+	color: steelblue;
+	font-weight: 700;
+	font-size: inherit;
+}
+button:hover{
+	background-color: steelblue;
+	color: white;
+}
+
+#stripe{
+	background-color: white;
+	height: 30px;
+	text-align: center;
+}
+
+#container {
+	max-width: 600px;
+	margin: 20px auto;
+}
+#gameMode{
+	font-size: 200%;
+}
+#message{
+	display: inline-block;
+	width: 20%;
+}
+.square{
+	width: 30%;
+	padding-top: 25%;
+	float: left;
+	margin: 1.66%;
+	background-color: white;
+	border-radius: 15px;
+	transition: background-color, .6s;
+	-webkit-transition: background-color, .6s;
+	-moz-transition: background-color, .6s;
+}
+.selected{
+	background-color: steelblue;
+	color: white;
+}
