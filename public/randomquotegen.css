@@ -7,13 +7,14 @@
 	min-width: 400px;
 
 
-	background-color: #A9AFD1;
+	background-color: #f1f1f1;
 	border: 5px solid black;
 	border-radius: 50px;
 
 	padding: 20px 20px 0px 20px;
 	overflow: hidden;
 }
+
 #author-text{
 	text-align: right;
 	padding-right: 35px;
@@ -40,13 +41,14 @@
 	outline: none;
 }
 #tumblr-icon{
-	color: white;
+	color: black;
 }
 #twitter-icon{
 	color: #1DA1F2;
 }
 #buttons{
 	padding: 20px;
+	z-index: 300;
 }
 #buttons a{
 	padding-right: 10px;
@@ -60,14 +62,20 @@
 	font-family: Raleway;
 	font-size: 20px;
 	padding-top: 20px;
-	}
+}
+
 
 h1{
 	text-align: center;
 	margin-top: 50px;
+	font-size: 70px;
+	color: black;
 }
 body {
-	background-color: #A1CDF4;
+	background: #2BC0E4;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 footer {
 	text-align: center;

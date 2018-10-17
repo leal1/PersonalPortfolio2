@@ -1,32 +1,79 @@
-	function addQuote(){
-	    $.ajax( {
-	      
-	     type: "GET",
-	     dataType: "jsonp",
-	     
-	     url:  "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
-	     
+// Selectors
+var quoteBox = $("#quote-box");
+var body = $("body");
+var newQuote = $("#new-quote");
+// List of gradients
+var gradients = [
+	{fallback: '#dae2f8', 
+		m1: '-webkit-linear-gradient(to right, #dae2f8, #d6a4a4)', 
+		m2:'linear-gradient(to right, #dae2f8, #d6a4a4)'} //borabora
+	, {fallback: '#2BC0E4',
+		m1:'-webkit-linear-gradient(to right, #EAECC6, #2BC0E4)', 
+		m2: 'linear-gradient(to right, #EAECC6, #2BC0E4)'} //moonrise
+	, {fallback:'#24c6dc',
+		 m1:'-webkit-linear-gradient(to right, #24c6dc, #514a9d)', 
+		 m2:'linear-gradient(to right, #24c6dc, #514a9d)'} //mantle
+	, {fallback:'#dd5e89',
+		 m1:'-webkit-linear-gradient(to right, #dd5e89, #f7bb97)', 
+		 m2:'linear-gradient(to right, #dd5e89, #f7bb97)'} //pinky
+	, {fallback:'#e55d87',
+		 m1:'-webkit-linear-gradient(to right, #e55d87, #5fc3e4)', 
+		 m2:'linear-gradient(to right, #e55d87, #5fc3e4)'} //rose water
+	, {fallback:'#ff6e7f',
+		 m1:' -webkit-linear-gradient(to right, #ff6e7f, #bfe9ff)', 
+		 m2:'linear-gradient(to right, #ff6e7f, #bfe9ff)'} //noon to dusk
+	, {fallback:'#ef32d9',
+		 m1:'-webkit-linear-gradient(to right, #ef32d9, #89fffd)', 
+		 m2:'linear-gradient(to right, #ef32d9, #89fffd)'} // azure pop
+	, {fallback:'#12c2e9',
+		 m1:'-webkit-linear-gradient(to right, #12c2e9, #c471ed, #f64f59)', 
+		 m2:'linear-gradient(to right, #12c2e9, #c471ed, #f64f59)'} // Jshine
+	, {fallback:'##feac5e',
+		 m1:'-webkit-linear-gradient(to right, #feac5e, #c779d0, #4bc0c8)', 
+		 m2:'linear-gradient(to right, #feac5e, #c779d0, #4bc0c8)'} //atlas
+	, {fallback:'#fc00ff',
+		 m1:'-webkit-linear-gradient(to right, #fc00ff, #00dbde)', 
+		 m2:'linear-gradient(to right, #fc00ff, #00dbde)'}
+];
 
+newQuote.on("click", function(){
+	var randNum = getRandGradNum();
+	console.log(randNum);
+	body.css({background: gradients[randNum]["fallback"]});
+	body.css({background: gradients[randNum]["m1"]});
+	body.css({background: gradients[randNum]["m2"]});
+	$(this).css({backgroundColor:gradients[randNum]["fallback"]});
+	$(this).css({backgroundColor:gradients[randNum]["m1"]});
+	$(this).css({backgroundColor:gradients[randNum]["m2"]});
 
-	      success:function(json){
-	      	document.getElementById("text").innerHTML = json.quoteText;
-	      	console.log('ya');
-	      	if(json.quoteAuthor==""){
-	      		document.getElementById("author").innerHTML = "Unknown";
-	      	}
-	      	else{
-	      		document.getElementById("author").innerHTML = json.quoteAuthor;
-	      	}
+});
 
-	      	
-	      },
-	      error:function()
-	      {
-	      	alert("Ajax call failed");
-	     
-	      }    
-	    })
-	}
+function getRandGradNum(){
+	return Math.floor(Math.random() * gradients.length)
+
+}
+
+function addQuote(){
+    $.ajax( {
+     type: "GET",
+     dataType: "jsonp",
+     url:  "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
+      success:function(json){
+      	document.getElementById("text").innerHTML = json.quoteText;
+      	if(json.quoteAuthor==""){
+      		document.getElementById("author").innerHTML = "Unknown";
+      	}
+      	else{
+      		document.getElementById("author").innerHTML = json.quoteAuthor;
+      	}
+      },
+      error:function()
+      {
+      	alert("Ajax call failed");
+     
+      }    
+    })
+}
 $(document).ready(function() {
 
 	addQuote();
