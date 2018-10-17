@@ -17,7 +17,7 @@ var colors;
 init();
 
 function init(){
-	flicker =false;
+	flicker =true;
 	pickedColor = getRandomColor();
 	gameMode.textContent = pickedColor;
 	setupMode();
