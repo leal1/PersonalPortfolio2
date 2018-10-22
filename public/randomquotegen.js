@@ -38,58 +38,6 @@ var gradients = [
 		 m1:'-webkit-linear-gradient(to right, #fc00ff, #00dbde)', 
 		 m2:'linear-gradient(to right, #fc00ff, #00dbde)'}
 ];
-
-function changeBackground(){
-	var randNum = getRandGradNum();
-	//console.log(randNum);
-	body.fadeTo(1150, .5,'linear', function(){
-		body.css({background: gradients[randNum]["fallback"]});
-		body.css({background: gradients[randNum]["m1"]});
-		body.css({background: gradients[randNum]["m2"]});
-	}).fadeTo('slow',1, 'linear');
-
-	newQuote.css({backgroundColor:gradients[randNum]["fallback"]});
-	newQuote.css({backgroundColor:gradients[randNum]["m1"]});
-	newQuote.css({backgroundColor:gradients[randNum]["m2"]});
-}
-
-
-function getRandGradNum(){
-	return Math.floor(Math.random() * gradients.length)
-
-}
-
-function addQuote(){
-    $.ajax( {
-     type: "GET",
-     dataType: "jsonp",
-     url:  "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
-      success:function(json){
-      	document.getElementById("text").innerHTML = json.quoteText;
-      	if(json.quoteAuthor==""){
-      		document.getElementById("author").innerHTML = "Unknown";
-      	}
-      	else{
-      		document.getElementById("author").innerHTML = json.quoteAuthor;
-      	}
-      },
-      error:function()
-      {
-      	alert("Ajax call failed");
-     
-      }    
-    })
-}
-
-function fadeAndAddQuote(){
-    quoteText.fadeOut(750, function(){
-    	addQuote();
-    	setTimeout(function(){
-    		quoteText.fadeIn(750);
-    	}, 400);
-    	
-    });
-}
 $(document).ready(function() {
 
 	addQuote();
@@ -113,3 +61,53 @@ $(document).ready(function() {
 	});
 
 });
+
+function changeBackground(){
+	var randNum = getRandGradNum();
+	//console.log(randNum);
+	body.fadeTo(1150, .5,'linear', function(){
+		body.css({background: gradients[randNum]["fallback"]});
+		body.css({background: gradients[randNum]["m1"]});
+		body.css({background: gradients[randNum]["m2"]});
+	}).fadeTo('slow',1, 'linear');
+
+	newQuote.css({backgroundColor:gradients[randNum]["fallback"]});
+	newQuote.css({backgroundColor:gradients[randNum]["m1"]});
+	newQuote.css({backgroundColor:gradients[randNum]["m2"]});
+}
+
+
+function getRandGradNum(){
+	return Math.floor(Math.random() * gradients.length)
+}
+
+function addQuote(){
+    $.ajax( {
+     type: "GET",
+     dataType: "jsonp",
+     url:  "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
+      success:function(json){
+      	document.getElementById("text").innerHTML = json.quoteText;
+      	if(json.quoteAuthor==""){
+      		document.getElementById("author").innerHTML = "Unknown";
+      	}
+      	else{
+      		document.getElementById("author").innerHTML = json.quoteAuthor;
+      	}
+      },
+      error:function()
+      {
+      	console.log("Ajax call failed");
+      }    
+    })
+}
+
+function fadeAndAddQuote(){
+    quoteText.fadeOut(750, function(){
+    	addQuote();
+    	setTimeout(function(){
+    		quoteText.fadeIn(750);
+    	}, 400);
+    	
+    });
+}
