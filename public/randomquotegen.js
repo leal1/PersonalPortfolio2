@@ -2,6 +2,9 @@
 var quoteBox = $("#quote-box");
 var body = $("body");
 var newQuote = $("#new-quote");
+var quoteText = $(".quote_text");
+
+
 // List of gradients
 var gradients = [
 	{fallback: '#dae2f8', 
@@ -36,17 +39,20 @@ var gradients = [
 		 m2:'linear-gradient(to right, #fc00ff, #00dbde)'}
 ];
 
-newQuote.on("click", function(){
+function changeBackground(){
 	var randNum = getRandGradNum();
-	console.log(randNum);
-	body.css({background: gradients[randNum]["fallback"]});
-	body.css({background: gradients[randNum]["m1"]});
-	body.css({background: gradients[randNum]["m2"]});
-	$(this).css({backgroundColor:gradients[randNum]["fallback"]});
-	$(this).css({backgroundColor:gradients[randNum]["m1"]});
-	$(this).css({backgroundColor:gradients[randNum]["m2"]});
+	//console.log(randNum);
+	body.fadeTo(1150, .5,'linear', function(){
+		body.css({background: gradients[randNum]["fallback"]});
+		body.css({background: gradients[randNum]["m1"]});
+		body.css({background: gradients[randNum]["m2"]});
+	}).fadeTo('slow',1, 'linear');
 
-});
+	newQuote.css({backgroundColor:gradients[randNum]["fallback"]});
+	newQuote.css({backgroundColor:gradients[randNum]["m1"]});
+	newQuote.css({backgroundColor:gradients[randNum]["m2"]});
+}
+
 
 function getRandGradNum(){
 	return Math.floor(Math.random() * gradients.length)
@@ -74,12 +80,23 @@ function addQuote(){
       }    
     })
 }
+
+function fadeAndAddQuote(){
+    quoteText.fadeOut(750, function(){
+    	addQuote();
+    	setTimeout(function(){
+    		quoteText.fadeIn(750);
+    	}, 400);
+    	
+    });
+}
 $(document).ready(function() {
 
 	addQuote();
-	$('#new-quote').click(function(e) {
+	newQuote.click(function(e) {
 	    e.preventDefault();
-	    addQuote();
+	    changeBackground();
+	    fadeAndAddQuote();
 	  });
 	$('#share_tweet').click(function(e){
 		e.preventDefault();
