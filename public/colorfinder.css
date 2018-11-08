@@ -1,44 +1,49 @@
 body{
-	background-color: #232323;
+	background-color: #d3d3d3;
 	font-family: "Montserrat", "Avenir";
 	margin: 0;
 }
+
+
 h1{
-	color: white;
+	color: #F5EFED;
 	text-align: center;
-	background-color: steelblue;
+	background-color: #2292A4;
 	margin: 0;
 	padding: 20px;
 	text-transform: uppercase;
+
 
 }
 
 button {
 	height: 100%;
 	outline: none;
+	background-color: #F5EFED;
 	border: none;
 	text-transform: uppercase;
 	transition: all, .3;
 	-webkit-transition: all, .3s;
 	-moz-transition: all, .3s;
-	color: steelblue;
+	color: #2292A4;
 	font-weight: 700;
 	font-size: inherit;
 }
 button:hover{
-	background-color: steelblue;
-	color: white;
+	background-color: #2292A4;
+	color: #F5EFED;
 }
 
 #stripe{
-	background-color: white;
+	background-color: #F5EFED;
 	height: 30px;
 	text-align: center;
+
 }
 
 #container {
 	max-width: 600px;
-	margin: 20px auto;
+	margin: 25px auto;
 }
 #gameMode{
 	font-size: 200%;
@@ -47,18 +52,31 @@ button:hover{
 	display: inline-block;
 	width: 20%;
 }
-.square{
+.circle{
 	width: 30%;
 	padding-top: 25%;
 	float: left;
 	margin: 1.66%;
-	background-color: white;
-	border-radius: 15px;
+	background-color: #F5EFED;
+	border-radius: 5000px;
 	transition: background-color, .6s;
 	-webkit-transition: background-color, .6s;
 	-moz-transition: background-color, .6s;
 }
 .selected{
-	background-color: steelblue;
-	color: white;
+	background-color: #2292A4;
+	color: #F5EFED;
+}
+
+#container2{
+
+	width: 60%;
+	height: 725px;
+	margin: 25px auto;
+
+	background-color: #242F40;
+	border-radius: 25px;
+
+
+	padding: 0;
 }

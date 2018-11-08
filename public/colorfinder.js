@@ -1,7 +1,7 @@
-var numSquares = 9;
+var numCircles = 9;
 
 
-var squares = document.querySelectorAll(".square");
+var circles = document.querySelectorAll(".circle");
 var gameMode = document.querySelector("#gameMode");
 var messageDisplay = document.querySelector("#message");
 var resetBtn = document.querySelector("#reset");
@@ -22,11 +22,12 @@ function init(){
 	gameMode.textContent = pickedColor;
 	setupMode();
 	if (flicker === true){
-	flickerColor();
+		flickerColor();
 	}
+
 	colors = generateColorArray();
-	updateSquares();
-	setupSquares();
+	updateCircles();
+	setupCircles();
 }
 
 
@@ -40,10 +41,13 @@ function setupMode(){
 			if(modes[i].textContent === "RGB Finder"){
 				flicker = false;
 				this.classList.add("selected");
+
 			}
 			else{
 				flicker = true;
 				this.classList.add("selected");
+
+
 			}
 			reset();
 		});
@@ -51,9 +55,9 @@ function setupMode(){
 	}
 }
 
-function setupSquares(){
-	for(let i = 0; i < numSquares; i++){
-		squares[i].addEventListener("click", function(){
+function setupCircles(){
+	for(let i = 0; i < numCircles; i++){
+		circles[i].addEventListener("click", function(){
 			var clickedColor = this.style.backgroundColor;
 			if( clickedColor === pickedColor){
 				toWinningColor();
@@ -62,7 +66,7 @@ function setupSquares(){
 				resetBtn.textContent = "Play Again?";
 			}
 			else{
-				this.style.backgroundColor = "#232323";
+				this.style.backgroundColor = "#242F40";
 				messageDisplay.textContent = "Try Again...";
 			}
 		})
@@ -80,10 +84,10 @@ function reset(){
 		flickerColor();
 	}
 	else{
-		h1.style.backgroundColor = "steelblue";
+		h1.style.backgroundColor = "#2292A4";
 	}
-	updateSquares();
-	setupSquares();
+	updateCircles();
+	setupCircles();
 	
 }
 
@@ -92,14 +96,14 @@ resetBtn.addEventListener("click", function(){
 });
 
 function toWinningColor(){
-	for(let i = 0; i< numSquares; i++){
-		squares[i].style.backgroundColor = pickedColor;
+	for(let i = 0; i< numCircles; i++){
+		circles[i].style.backgroundColor = pickedColor;
 	}
 }
 
-function updateSquares(){
-	for(let i = 0 ; i< numSquares; i++){
-			squares[i].style.backgroundColor = colors[i];
+function updateCircles(){
+	for(let i = 0 ; i< numCircles; i++){
+			circles[i].style.backgroundColor = colors[i];
 	}	
 }
 
@@ -112,23 +116,23 @@ function getRandomColor(){
 }
 
 function flickerColor(){
-	// Displays the picked color in middle square, and hides all other squares
+	// Displays the picked color in middle circle, and hides all other circles
 	messageDisplay.textContent = "Find the flickered color!";
 	gameMode.textContent = "flickered color";
 	h1.style.backgroundColor = pickedColor;
-	setTimeout(function(){h1.style.backgroundColor = "steelblue"}, 100);
+	setTimeout(function(){h1.style.backgroundColor = "#2292A4"}, 100);
 }
 
 function getRandomIndex(){
 	// Returns random index 
-	return Math.floor(Math.random() * numSquares);
+	return Math.floor(Math.random() * numCircles);
 }
 
 function generateColorArray(){
 	// Generates color array with Picked Color randomlly placed
 	var randomIndex = getRandomIndex();
 	var arr = [];
-	for(let i = 0; i < numSquares; i++){
+	for(let i = 0; i < numCircles; i++){
 		if( i == randomIndex){
 			arr.push(pickedColor);
 		}
