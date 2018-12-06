@@ -117,7 +117,7 @@ function getRandomColor(){
 
 function flickerColor(){
 	// Displays the picked color in middle circle, and hides all other circles
-	messageDisplay.textContent = "Find the flickered color!";
+	
 	gameMode.textContent = "flickered color";
 	h1.style.backgroundColor = pickedColor;
 	setTimeout(function(){h1.style.backgroundColor = "#2292A4"}, 100);
