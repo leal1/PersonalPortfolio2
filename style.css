@@ -114,12 +114,15 @@ h2{
 	justify-content: space-around;
 	padding-top: 50px;
 	padding-bottom: 100px;
+	padding-left: 0px;
+	padding-right: 0px;
 	
 
 }
 .contact-pic {
 	width: 100px;
 	height: 100px;
+	min-width: 100px;
 }
 .contact-info {
 	text-decoration: none;
